@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Quest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">Quiz Quest</div>
+    <div class="stats">
+      <div class="avatar" id="avatar-current">🙂</div>
+      <div class="coins">🪙 <span id="coins">0</span></div>
+      <div class="level">
+        <div id="level-label">Lv 1</div>
+        <div class="xpbar"><div id="xpbar-fill"></div></div>
+        <div class="xpnum"><span id="xp">0</span>/<span id="xpNext">25</span> XP</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <button class="btn" id="btn-packs">🎁 Packs</button>
+      <button class="btn" id="btn-avatars">😎 Avatars</button>
+      <button class="btn" id="btn-achievements">🏆 Achievements</button>
+      <button class="btn" id="btn-shop">🛒 Shop</button>
+      <button class="btn btn-purple" id="btn-spin">🎡 Daily Spin</button>
+      <button class="btn btn-pink" id="btn-data">📂 Data Manager</button>
+    </div>
+
+    <div>
+      <!-- Quiz Card -->
+      <div class="card" id="quiz-card" class="hidden">
+        <div class="quiz-header">
+          <h2 id="quiz-title">Quiz</h2>
+          <div>Q <span id="qIndex">1</span>/<span id="qTotal">0</span></div>
+          <div>🔥 <span id="streak">0</span></div>
+        </div>
+        <div class="question" id="question"></div>
+        <div class="answers" id="answers"></div>
+        <div class="row space-between">
+          <button class="btn" id="btn-skip">Skip</button>
+          <button class="btn btn-primary" id="btn-next" disabled>Next</button>
+        </div>
+      </div>
+
+      <!-- Result Card -->
+      <div class="card hidden" id="result-card">
+        <h2>Results</h2>
+        <p><strong><span id="res-correct">0</span></strong> / <span id="res-total">0</span> correct</p>
+        <p>XP Earned: <span id="res-xp">0</span></p>
+        <div class="row">
+          <button class="btn" id="btn-retry">Retry</button>
+          <button class="btn btn-primary" id="btn-close">Close</button>
+        </div>
+      </div>
+
+      <!-- Quiz Selector -->
+      <div class="card">
+        <select id="quiz-select" class="select"></select>
+        <button class="btn btn-primary" id="btn-start">Start Quiz</button>
+      </div>
+
+      <!-- Panels -->
+      <div id="panel-packs" class="card hidden"></div>
+      <div id="panel-avatars" class="card hidden"></div>
+      <div id="panel-achievements" class="card hidden"></div>
+      <div id="panel-shop" class="card hidden"></div>
+      <div id="panel-data" class="card hidden"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="app.js"></script>
+</body>
+</html>
